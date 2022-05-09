@@ -8,6 +8,8 @@
       ios_command:
         commands:
           - show ip inter br
+          - show vlan
+          - show version
       register: output
 
     - debug: var=output.stdout_lines
