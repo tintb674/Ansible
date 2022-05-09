@@ -1,0 +1,13 @@
+---
+- name: Cau hinh tren router
+  hosts: SW1
+  gather_facts: no
+
+  tasks:
+    - name: Show ip
+      ios_command:
+        commands:
+          - show ip vlan br
+      register: output
+
+    - debug: var=output.stdout_lines
